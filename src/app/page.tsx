@@ -18,7 +18,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <main className="lg:w-[90%]  lg:rounded-2xl lg:px-16 lg:py-20 bg-white w-full lg:h-full h-screen py-4 px-4 ">
+      <main className="lg:w-[90%]  lg:rounded-2xl lg:px-16 lg:py-20 bg-white w-full h-full py-4 px-4 ">
         <section className="mt-10">
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="space-y-6">
