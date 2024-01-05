@@ -18,7 +18,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <main className="lg:w-[90%]  lg:rounded-2xl lg:px-16 lg:py-20 bg-white w-full h-full py-4 px-4 ">
+      <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section className="mt-10">
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="space-y-6">
@@ -52,7 +52,7 @@ export default function Home() {
                   align: "start",
                 }}
                 orientation="vertical"
-                className="w-full  mt-10"
+                className="w-full  mt-12"
               >
                 <CarouselContent className="-mt-1 md:h-[400px] h-[200px]">
                   {projects.map((project, index) => (
