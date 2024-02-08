@@ -2,16 +2,20 @@
 import React from "react";
 import { Card, CardDescription, CardTitle } from "./ui/card";
 
-export default function LastedProjects() {
+import { Props } from "@/interface/projects.interface";
+
+export default function LastedProjects({
+  title,
+  description,
+  date,
+}: Props) {
   return (
     <Card>
       <div className="flex justify-between items-center">
-        <CardTitle>The power of react hooks</CardTitle>
-        <small>Feb 2022</small>
+        <CardTitle>{title}</CardTitle>
+        <small>{date}</small>
       </div>
-      <CardDescription>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, non?
-      </CardDescription>
+      <CardDescription>{description}</CardDescription>
     </Card>
   );
 }
