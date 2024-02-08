@@ -3,11 +3,35 @@ import React from "react";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import { myProjects } from "@/mocks/myProjects.mock";
+import { LastedProjects } from "@/components/LastedProjects";
 import Link from "next/link";
+import SelectedProjects from "@/components/SelectedProjects";
 
 export default function Home() {
+  // Supongamos que myProjects es tu arreglo de proyectos
+
+  // Filtra los proyectos que tienen una fecha válida (no vacía)
+  const projectsWithValidDates = myProjects.filter(project => project.date.trim() !== "");
+
+  // Ordena los proyectos por fecha en orden descendente
+  const sortedProjects = projectsWithValidDates.sort((a, b) => {
+    const dateA: any = new Date(a.date);
+    const dateB: any = new Date(b.date);
+    return dateB - dateA;
+  });
+
+  // Toma los primeros dos proyectos (los más recientes)
+  const latestProjects = sortedProjects.slice(0, 2);
+
+  // Ahora latestProjects contiene los dos proyectos más recientes con fechas válidas
+
+
+  const destacatedProjects = myProjects.filter(project => project.destacated);
+
   return (
     <section className="flex flex-col gap-16">
+
       <section className="flex flex-col gap-5">
         <h1 className="text-3xl dark:text-neutral-100 text-neutral-800">
           Hi, I’m Juan 👋
@@ -71,35 +95,21 @@ export default function Home() {
           </Link>
         </div>
 
+
         <section className="flex flex-col sm:flex-row gap-4 sm:justify-between">
           {/* list de 2 */}
-          <Card className="flex flex-col  gap-3 px-4 py-3 transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400">
-            <div className="flex justify-between items-center">
-              <CardTitle>The power of react hooks</CardTitle>
-              <small>Feb 2022</small>
-            </div>
-            <CardDescription>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              non?
-            </CardDescription>
-          </Card>
-          <Card className="flex flex-col  gap-3 px-4 py-3 transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400">
-            <div className="flex justify-between items-center">
-              <CardTitle>The power of react hooks</CardTitle>
-              <small>Feb 2022</small>
-            </div>
-
-            <CardDescription>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-              non?
-            </CardDescription>
-          </Card>
+          {latestProjects.map((item, i) => (
+            <LastedProjects {...item} key={i} />
+          ))}
         </section>
       </section>
       <section className="flex flex-col gap-5">
         <h3 className="text-lg dark:text-neutral-100">Selected Projects</h3>
         <section className="flex flex-col gap-4">
-          <Card className="flex h-14 px-3  justify-between items-center transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400">
+          {destacatedProjects.map((item, i) => (
+            <SelectedProjects {...item} key={i} />
+          ))}
+          {/* <Card className="flex h-14 px-3  justify-between items-center transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400">
             <div className="flex items-center gap-4">
               <h3>Dictionary app</h3>
               <small>React JS react Query zod</small>
@@ -119,7 +129,7 @@ export default function Home() {
               <small>React JS react Query zod</small>
             </div>
             <ArrowTopRightIcon />
-          </Card>
+          </Card> */}
         </section>
       </section>
       {/* Footer */}

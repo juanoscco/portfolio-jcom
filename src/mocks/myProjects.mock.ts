@@ -1,4 +1,7 @@
-export const myProjects = [
+import { Props } from "@/interface/projects.interface";
+
+
+export const myProjects: Props[] = [
   {
     title: "Angular Components",
     date: "2023-01-01",
@@ -14,7 +17,7 @@ export const myProjects = [
     date: "2023-02-01",
     description:
       "An image gallery application built with Next.js and React for showcasing personal photos and images.",
-    destacated: false,
+    destacated: true,
     type: "Next.js",
     link: "https://github.com/jcom-dev/my-gallery",
     skills: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -24,7 +27,7 @@ export const myProjects = [
     description:
       "A quiz application focused on testing knowledge about countries and their capitals.",
     date: "2023-06-30",
-    destacated: true,
+    destacated: false,
     link: "https://github.com/jcom-dev/quiz-country",
     type: "Next.js",
     skills: ["Next.js", "React", "Tailwind CSS"],
@@ -54,7 +57,7 @@ export const myProjects = [
     description: "A project to clone the Airbnb site for Windbnb in Angular.",
     date: "2023-06-30",
     link: "https://github.com/jcom-dev/windbnb",
-    destacated: true,
+    destacated: false,
     type: "Angular",
     skills: ["Angular", "TypeScript", "SASS/SCSS"],
   },

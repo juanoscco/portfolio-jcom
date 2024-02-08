@@ -4,18 +4,17 @@ import { Card, CardDescription, CardTitle } from "./ui/card";
 
 import { Props } from "@/interface/projects.interface";
 
-export default function LastedProjects({
-  title,
-  description,
-  date,
+export  function LastedProjects({
+  title,date,description
 }: Props) {
+
   return (
-    <Card>
+    <Card className="flex flex-col  gap-3 px-4 py-3 transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400 w-3/6">
       <div className="flex justify-between items-center">
         <CardTitle>{title}</CardTitle>
         <small>{date}</small>
       </div>
-      <CardDescription>{description}</CardDescription>
+      <CardDescription className="max-w-full truncate">{description}</CardDescription>
     </Card>
   );
 }
