@@ -21,9 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          defaultTheme="light"
+          // enableSystem
+          // disableTransitionOnChange
         >
           <main className="w-11/12 max-w-2xl m-auto pt-3 flex flex-col gap-9 text-sm dark:text-neutral-400">
             <Navbar />

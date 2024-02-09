@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { MoonIcon, RocketIcon, SunIcon } from "@radix-ui/react-icons";
 
 import { useTheme } from "next-themes";
 
@@ -35,7 +35,7 @@ export default function Navbar() {
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-          <DropdownMenuItem>
+            <DropdownMenuItem>
               <Link href="/">Home</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
@@ -46,7 +46,7 @@ export default function Navbar() {
       </DropdownMenu>
 
       <section>
-        {theme === "dark" ? (
+        {/* {theme === "dark" ? (
           <MoonIcon
             className="cursor-pointer size-6"
             onClick={() => setTheme("light")}
@@ -56,7 +56,29 @@ export default function Navbar() {
             className="cursor-pointer size-6"
             onClick={() => setTheme("dark")}
           />
-        )}
+        )} */}
+        {/* {theme === "system" ? (
+          /* El tema es "system" */
+          // <RocketIcon
+          //   className="cursor-pointer size-6"
+          //   onClick={() => setTheme("light")} // o cualquier otra lógica para el tema del sistema
+          // />
+          // ) :
+          theme === "light" ? (
+            /* El tema es "dark" */
+            // SunIcon
+            <SunIcon
+              className="cursor-pointer size-6"
+              onClick={() => setTheme("dark")}
+            />
+          ) : (
+            /* El tema es "light" o cualquier otro caso */
+            <MoonIcon
+              className="cursor-pointer size-6"
+              onClick={() => setTheme("light")}
+            />
+          )}
+
       </section>
     </nav>
   );
