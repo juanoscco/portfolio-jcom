@@ -1,5 +1,6 @@
 export interface Props {
-  title?: string;
+  title?: string | any;
+  slug?: string | any;
   description?: string;
   date?: string | any;
   destacated?: boolean;

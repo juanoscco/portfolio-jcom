@@ -96,7 +96,7 @@ export default function Home() {
         </div>
 
 
-        <section className="flex flex-col sm:flex-row gap-4 sm:justify-between">
+        <section className="flex flex-col  sm:flex-row sm:gap-4 gap-2 sm:justify-between">
           {/* list de 2 */}
           {latestProjects.map((item, i) => (
             <LastedProjects {...item} key={i} />
@@ -109,27 +109,6 @@ export default function Home() {
           {destacatedProjects.map((item, i) => (
             <SelectedProjects {...item} key={i} />
           ))}
-          {/* <Card className="flex h-14 px-3  justify-between items-center transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400">
-            <div className="flex items-center gap-4">
-              <h3>Dictionary app</h3>
-              <small>React JS react Query zod</small>
-            </div>
-            <ArrowTopRightIcon />
-          </Card>
-          <Card className="flex h-14 px-3  justify-between items-center transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400">
-            <div className="flex items-center gap-4">
-              <h3>Dictionary app</h3>
-              <small>React JS react Query zod</small>
-            </div>
-            <ArrowTopRightIcon />
-          </Card>
-          <Card className="flex h-14 px-3  justify-between items-center transition-all duration-300 hover:-translate-y-2 hover:border-neutral-400">
-            <div className="flex items-center gap-4">
-              <h3>Dictionary app</h3>
-              <small>React JS react Query zod</small>
-            </div>
-            <ArrowTopRightIcon />
-          </Card> */}
         </section>
       </section>
       {/* Footer */}
@@ -139,7 +118,7 @@ export default function Home() {
           Email me at{" "}
           <a
             href="mailto:juan.osccomori@gmail.com"
-            className="hover:text-neutral-100 cursor-pointer"
+            className="dark:hover:text-neutral-100 hover:text-orange-500 cursor-pointer"
             rel="noreferrer"
             target="_blank"
           >

@@ -35,45 +35,29 @@ export default function Navbar() {
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <Link href="/">Home</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link href="/projects">Projects</Link>
-            </DropdownMenuItem>
+            <Link href="/" className="cursor-pointer">
+              <DropdownMenuItem>
+                Home
+              </DropdownMenuItem>
+            </Link>
+            <Link href="/projects" className="cursor-pointer">
+              <DropdownMenuItem>
+                Projects
+              </DropdownMenuItem>
+            </Link>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
 
       <section>
-        {/* {theme === "dark" ? (
-          <MoonIcon
-            className="cursor-pointer size-6"
-            onClick={() => setTheme("light")}
-          />
-        ) : (
-          <SunIcon
-            className="cursor-pointer size-6"
-            onClick={() => setTheme("dark")}
-          />
-        )} */}
-        {/* {theme === "system" ? (
-          /* El tema es "system" */
-          // <RocketIcon
-          //   className="cursor-pointer size-6"
-          //   onClick={() => setTheme("light")} // o cualquier otra lógica para el tema del sistema
-          // />
-          // ) :
+        {
           theme === "light" ? (
-            /* El tema es "dark" */
-            // SunIcon
-            <SunIcon
+            <MoonIcon
               className="cursor-pointer size-6"
               onClick={() => setTheme("dark")}
             />
           ) : (
-            /* El tema es "light" o cualquier otro caso */
-            <MoonIcon
+            <SunIcon
               className="cursor-pointer size-6"
               onClick={() => setTheme("light")}
             />

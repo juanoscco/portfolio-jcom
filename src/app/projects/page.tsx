@@ -2,6 +2,7 @@
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import React from "react";
 import { myProjects } from "@/mocks/myProjects.mock"
+import Link from "next/link";
 
 export default function ManagerProjects() {
   const [showProjects, setShowProjects] = React.useState(true);
@@ -10,7 +11,7 @@ export default function ManagerProjects() {
   const nextProjects = myProjects.filter(item => item.type === 'Next.js');
 
   return (
-    <section className="flex flex-col gap-14">
+    <section className="flex flex-col gap-14 w-11/12 max-w-2xl m-auto">
       <div className="flex justify-between items-center">
         <h2 className="text-lg dark:text-neutral-100">Projects</h2>
         <ul className="flex gap-2">
@@ -37,9 +38,9 @@ export default function ManagerProjects() {
       {showProjects ? (
         <section className="flex flex-col gap-4">
           {nextProjects.map((item, i) => (
-            <a
+            <Link
               className="group flex flex-col gap-2 border-t border-neutral-700 py-4 transition-all dark:hover:text-neutral-100"
-              href="/posts/the-power-of-react-hooks"
+              href={`/projects/${item.slug}`}
               key={i}
             >
               <div className="flex w-full items-center justify-between">
@@ -52,16 +53,16 @@ export default function ManagerProjects() {
               <p>
                 {item.description}
               </p>
-            </a>
+            </Link>
           ))}
 
         </section>
       ) : (
         <section className="flex flex-col gap-4">
           {angularProjects.map((item, i) => (
-            <a
+            <Link
               className="group flex flex-col gap-2 border-t border-neutral-700 py-4 transition-all dark:hover:text-neutral-100"
-              href="/projects"
+              href={`/projects/${item.slug}`}
               key={i}
             >
               <div className="flex w-full items-center justify-between">
@@ -74,7 +75,7 @@ export default function ManagerProjects() {
               <p>
                 {item.description}
               </p>
-            </a>
+            </Link>
           ))}
 
 
