@@ -41,17 +41,17 @@ export default function Page({ params }: Props) {
                         <p className="mb-2">{project?.description}</p>
                         <p className="mb-2">Date: {project?.date}</p>
 
-                        <article className='sm:hidden block my-5'>
+                        <article className='sm:hidden block mt-5'>
                             <h1 className='text-xl font-bold '>Skills</h1>
-                            <ul className="list-disc gap-7  sm:gap-0 sm:pl-4 px-6 sm:px-0 sm:py-4 py-3 flex justify-start sm:flex-col">
+                            <ul className="list-disc gap-7  sm:gap-0 sm:pl-4 px-6 sm:px-0 sm:py-4 py-3 flex flex-wrap justify-start sm:flex-col">
                                 {project.skills.map((skill: string, index: number) => (
-                                    <li className='px-1 py-1' key={index}>{skill}</li>
+                                    <li className='px-1 pt-1' key={index}>{skill}</li>
                                 ))}
                             </ul>
                         </article>
 
                         <article>
-                            <h1 className='text-xl font-bold my-3'>Links</h1>
+                            <h1 className='text-xl font-bold my-2'>Links</h1>
                             <div className='flex gap-2'>
                                 <a href={project.link} target='_blank' rel='noreferrer'>
                                     <GitHubLogoIcon height={20} width={20} className=' rounded-full ' />
