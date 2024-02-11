@@ -45,7 +45,7 @@ export default function Page({ params }: Props) {
                             <h1 className='text-xl font-bold '>Skills</h1>
                             <ul className="list-disc gap-7  sm:gap-0 sm:pl-4 px-6 sm:px-0 sm:py-4 py-3 flex flex-wrap justify-start sm:flex-col">
                                 {project.skills.map((skill: string, index: number) => (
-                                    <li className='px-1 pt-1' key={index}>{skill}</li>
+                                    <li className='px-1 p-1' key={index}>{skill}</li>
                                 ))}
                             </ul>
                         </article>
