@@ -15,7 +15,7 @@ export default function Page({ params }: Props) {
     const project = myProjects.find(project => project.slug === slug);
 
     return (
-        <section className='w-10/12 max-w-2xl m-auto'>
+        <section className='w-11/12 max-w-2xl m-auto'>
             <Image
                 src={`https://source.unsplash.com/random/600x300/?programmer`}
                 alt='my-tech-stack'
